@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbxed1x7kk4q5"]
+[gd_scene load_steps=9 format=3 uid="uid://cbxed1x7kk4q5"]
 
 [ext_resource type="Texture2D" uid="uid://5vr4s8opxv4u" path="res://Player/Sprites/Brawler-Girl/idle.png" id="1_l1p00"]
+[ext_resource type="Script" uid="uid://b16bjcc3fq4ji" path="res://Scripts/player.gd" id="1_q3lat"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1erje"]
 atlas = ExtResource("1_l1p00")
@@ -42,6 +43,7 @@ animations = [{
 size = Vector2(24, 46)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_q3lat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(274, 646)
