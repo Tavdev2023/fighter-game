@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbxed1x7kk4q5"]
+
+[ext_resource type="Texture2D" uid="uid://5vr4s8opxv4u" path="res://Player/Sprites/Brawler-Girl/idle.png" id="1_l1p00"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1erje"]
+atlas = ExtResource("1_l1p00")
+region = Rect2(0, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m22wp"]
+atlas = ExtResource("1_l1p00")
+region = Rect2(96, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbab0"]
+atlas = ExtResource("1_l1p00")
+region = Rect2(192, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c0f4"]
+atlas = ExtResource("1_l1p00")
+region = Rect2(288, 0, 96, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emlxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1erje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m22wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbab0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c0f4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1upr0"]
+size = Vector2(24, 46)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(274, 646)
+scale = Vector2(1.0228167, 1.0228168)
+sprite_frames = SubResource("SpriteFrames_emlxi")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.47160837
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(271, 655)
+shape = SubResource("RectangleShape2D_1upr0")
+debug_color = Color(0.85119677, 0.29173112, 0.5947124, 0.41960785)
