@@ -177,19 +177,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1upr0"]
-size = Vector2(40, 78)
+size = Vector2(35, 79)
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(-15, 5)
 script = ExtResource("1_q3lat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(307.35712, 624.1094)
+position = Vector2(77.45232, 59.109375)
 scale = Vector2(1.7177566, 1.7177569)
 sprite_frames = SubResource("SpriteFrames_emlxi")
-animation = &"punch"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(305, 639)
+position = Vector2(72.5, 74.5)
 shape = SubResource("RectangleShape2D_1upr0")
 debug_color = Color(0.85119677, 0.29173112, 0.5947124, 0.41960785)

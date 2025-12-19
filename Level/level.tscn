@@ -580,7 +580,7 @@ tile_set = SubResource("TileSet_uawph")
 zoom = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("2_qmtf6")]
-position = Vector2(-271, -615)
+position = Vector2(-215, -55)
 
 [node name="Parede 1" type="StaticBody2D" parent="."]
 
