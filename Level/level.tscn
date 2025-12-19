@@ -585,18 +585,18 @@ position = Vector2(-271, -615)
 [node name="Parede 1" type="StaticBody2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="Parede 1"]
-position = Vector2(201.5, -12.375)
+position = Vector2(200, -10)
 shape = SubResource("RectangleShape2D_qmtf6")
 
 [node name="Parede 2" type="StaticBody2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="Parede 2"]
-position = Vector2(-200, -8)
+position = Vector2(-200, -10)
 shape = SubResource("RectangleShape2D_qmtf6")
 
 [node name="Parede 3" type="StaticBody2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="Parede 3"]
-position = Vector2(2.5, -112.5)
+position = Vector2(0, -110)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_qmtf6")
