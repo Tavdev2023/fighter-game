@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dh354polqasre"]
 
 [ext_resource type="Texture2D" uid="uid://dfp0cdnnglcxl" path="res://Player/Sprites/Enemy-Punk/Idle/idle1.png" id="1_kmd6l"]
-[ext_resource type="Script" uid="uid://bl5asxg81658o" path="res://player_2.gd" id="1_lf36f"]
+[ext_resource type="Script" uid="uid://bl5asxg81658o" path="res://Scripts/player_2.gd" id="1_lf36f"]
 [ext_resource type="Texture2D" uid="uid://d4eekkk8tkg3r" path="res://Player/Sprites/Enemy-Punk/Idle/idle2.png" id="2_qxttf"]
 [ext_resource type="Texture2D" uid="uid://dj7jlsikuyt07" path="res://Player/Sprites/Enemy-Punk/Idle/idle3.png" id="3_lf36f"]
 [ext_resource type="Texture2D" uid="uid://wyqsayjylava" path="res://Player/Sprites/Enemy-Punk/Idle/idle4.png" id="4_wv07v"]

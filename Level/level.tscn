@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxnmmkc5mn7o4" path="res://Level/Sprites/Stage Layers/tileset.png" id="1_o6mkr"]
 [ext_resource type="PackedScene" uid="uid://cbxed1x7kk4q5" path="res://Player/Player.tscn" id="2_qmtf6"]
-[ext_resource type="PackedScene" uid="uid://dh354polqasre" path="res://Player_2.tscn" id="3_uawph"]
+[ext_resource type="PackedScene" uid="uid://dh354polqasre" path="res://Player/Player_2.tscn" id="3_uawph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmtf6"]
 texture = ExtResource("1_o6mkr")
