@@ -1,0 +1,95 @@
+[gd_scene load_steps=18 format=3 uid="uid://dh354polqasre"]
+
+[ext_resource type="Texture2D" uid="uid://dfp0cdnnglcxl" path="res://Player/Sprites/Enemy-Punk/Idle/idle1.png" id="1_kmd6l"]
+[ext_resource type="Script" uid="uid://bl5asxg81658o" path="res://player_2.gd" id="1_lf36f"]
+[ext_resource type="Texture2D" uid="uid://d4eekkk8tkg3r" path="res://Player/Sprites/Enemy-Punk/Idle/idle2.png" id="2_qxttf"]
+[ext_resource type="Texture2D" uid="uid://dj7jlsikuyt07" path="res://Player/Sprites/Enemy-Punk/Idle/idle3.png" id="3_lf36f"]
+[ext_resource type="Texture2D" uid="uid://wyqsayjylava" path="res://Player/Sprites/Enemy-Punk/Idle/idle4.png" id="4_wv07v"]
+[ext_resource type="Texture2D" uid="uid://djru3lqlh7hyh" path="res://Player/Sprites/Enemy-Punk/Punch/punch1.png" id="6_pha46"]
+[ext_resource type="Texture2D" uid="uid://dl20pmmgs0gqy" path="res://Player/Sprites/Enemy-Punk/Punch/punch2.png" id="7_3w58y"]
+[ext_resource type="Texture2D" uid="uid://xxra0gmrlth4" path="res://Player/Sprites/Enemy-Punk/Punch/punch3.png" id="8_nl0e2"]
+[ext_resource type="Texture2D" uid="uid://bkbypm26w2tip" path="res://Player/Sprites/Enemy-Punk/Walk/walk1.png" id="9_wr5q2"]
+[ext_resource type="Texture2D" uid="uid://baf4jc10tmchw" path="res://Player/Sprites/Enemy-Punk/Walk/walk2.png" id="10_3hrur"]
+[ext_resource type="Texture2D" uid="uid://btx2t5m441hk5" path="res://Player/Sprites/Enemy-Punk/Walk/walk3.png" id="11_ynpf6"]
+[ext_resource type="Texture2D" uid="uid://cdp3au1gt83qg" path="res://Player/Sprites/Enemy-Punk/Walk/walk4.png" id="12_s6ygh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tmoy"]
+atlas = ExtResource("1_kmd6l")
+region = Rect2(0, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2k6r"]
+atlas = ExtResource("6_pha46")
+region = Rect2(0, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef7e7"]
+atlas = ExtResource("9_wr5q2")
+region = Rect2(0, 0, 96, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myi03"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tmoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qxttf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lf36f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wv07v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2k6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3w58y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nl0e2")
+}],
+"loop": true,
+"name": &"punch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef7e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3hrur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ynpf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s6ygh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxttf"]
+size = Vector2(45, 85)
+
+[node name="Player_2" type="CharacterBody2D"]
+position = Vector2(170, 50)
+script = ExtResource("1_lf36f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(37.285698, 15.374996)
+scale = Vector2(1.7579364, 1.7579364)
+sprite_frames = SubResource("SpriteFrames_myi03")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(32.5, 27.5)
+shape = SubResource("RectangleShape2D_qxttf")

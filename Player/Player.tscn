@@ -177,20 +177,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1upr0"]
-size = Vector2(35, 79)
+size = Vector2(35, 80)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-15, 5)
 script = ExtResource("1_q3lat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(77.45232, 59.109375)
+position = Vector2(75, 60)
 scale = Vector2(1.7177566, 1.7177569)
 sprite_frames = SubResource("SpriteFrames_emlxi")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(72.5, 74.5)
+position = Vector2(72.5, 75)
 shape = SubResource("RectangleShape2D_1upr0")
 debug_color = Color(0.85119677, 0.29173112, 0.5947124, 0.41960785)

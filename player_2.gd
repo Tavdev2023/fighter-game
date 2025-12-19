@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0.0
 
 	# Entrada horizontal (esquerda/direita)
-	var input_dir := Input.get_axis("move_left_p1", "move_right_p1") # -1 .. +1
+	var input_dir := Input.get_axis("move_left_p2", "move_right_p2") # -1 .. +1
 	var target_x := input_dir * move_speed
 
 	# Move com aceleração/desaceleração (mais "peso")
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, decel * delta)
 
 	# Pulo (só no chão)
-	if is_on_floor() and Input.is_action_just_pressed("jump_p1"):
+	if is_on_floor() and Input.is_action_just_pressed("jump_p2"):
 		velocity.y = jump_velocity
 
 	# Aplica movimento com colisão
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Flip do sprite (se quiser que vire pra esquerda/direita)
 	if input_dir != 0.0:
-		anim.flip_h = input_dir < 0.0
+		anim.flip_h = input_dir > 0.0
 
 	_update_animation(input_dir)
 
@@ -59,7 +59,7 @@ func _update_animation(input_dir: float) -> void:
 	else:
 		_play_if_not("idle")
 		
-	if Input.is_action_just_pressed("punch_p1"):
+	if Input.is_action_just_pressed("punch_p2"):
 		_play_if_not("punch")
 		
 func _play_if_not(name: String) -> void:
