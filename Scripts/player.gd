@@ -7,6 +7,10 @@ extends CharacterBody2D
 @export var accel: float = 1800.0
 @export var decel: float = 2200.0
 
+@export_group("States")
+@export var punch_state: PlayerState
+@export var kick_state: PlayerState
+
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
@@ -61,6 +65,8 @@ func _update_animation(input_dir: float) -> void:
 		
 	if Input.is_action_just_pressed("punch_p1"):
 		_play_if_not("punch")
+	if Input.is_action_just_pressed("kick_p1"):
+		_play_if_not("kick")
 		
 func _play_if_not(name: String) -> void:
 	if anim.animation != name:
