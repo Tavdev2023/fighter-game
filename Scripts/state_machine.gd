@@ -5,7 +5,7 @@ var current_state: State
 
 @export var starting_state: State
 
-func _ready() -> void:
+func init() -> void:
 	change_state(starting_state)
 
 func process_frame(delta: float) -> void:
@@ -22,6 +22,5 @@ func process_physics(delta: float) -> void:
 	
 func change_state(new_state: State) -> void:
 	if current_state: current_state.exit();
-	
 	current_state = new_state
 	current_state.enter()

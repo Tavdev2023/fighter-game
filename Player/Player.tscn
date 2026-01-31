@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://cbxed1x7kk4q5"]
 
+[ext_resource type="Script" uid="uid://caavjcpap462o" path="res://Scripts/state_machine.gd" id="1_6ysni"]
 [ext_resource type="Texture2D" uid="uid://5vr4s8opxv4u" path="res://Player/Sprites/Brawler-Girl/idle.png" id="1_l1p00"]
 [ext_resource type="Script" uid="uid://b16bjcc3fq4ji" path="res://Scripts/player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://smktrdoinibv" path="res://Player/Sprites/Brawler-Girl/jump.png" id="3_ddoul"]
 [ext_resource type="Texture2D" uid="uid://djvycdmcyp3o7" path="res://Player/Sprites/Brawler-Girl/punch.png" id="4_6ysni"]
 [ext_resource type="Texture2D" uid="uid://dd4i31ny4x1xx" path="res://Player/Sprites/Brawler-Girl/walk.png" id="4_8g4oa"]
 [ext_resource type="Texture2D" uid="uid://lqplve3dabvm" path="res://Player/Sprites/Brawler-Girl/kick.png" id="4_vlldt"]
+[ext_resource type="Script" uid="uid://dsyivjeldx7rl" path="res://Scripts/idle_state.gd" id="8_s1rgi"]
+[ext_resource type="Script" uid="uid://wym2rjqg5t7t" path="res://Player/walk.gd" id="9_j23h2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1erje"]
 atlas = ExtResource("1_l1p00")
@@ -218,26 +221,125 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1upr0"]
-size = Vector2(20, 50)
+size = Vector2(25, 50)
 
-[node name="Player" type="CharacterBody2D" unique_id=1534483331]
+[sub_resource type="Animation" id="Animation_vlldt"]
+resource_name = "Idle"
+length = 0.80002004
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_s1rgi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j23h2"]
+resource_name = "Walk"
+length = 2.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j23h2"]
+_data = {
+&"Idle": SubResource("Animation_vlldt"),
+&"RESET": SubResource("Animation_s1rgi"),
+&"Walk": SubResource("Animation_j23h2")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=1534483331 groups=["Player"]]
 position = Vector2(-15, 5)
 script = ExtResource("1_q3lat")
-move_speed = null
-jump_velocity = null
-gravity = null
-accel = null
-decel = null
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=359551549]
-position = Vector2(70, 80)
-scale = Vector2(1.1763386, 1.1763387)
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=359551549]
+position = Vector2(70, 78.972664)
+scale = Vector2(1.1763386, 1.1437248)
 sprite_frames = SubResource("SpriteFrames_emlxi")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.33895728
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=769953708]
-position = Vector2(70, 90)
+position = Vector2(67.5, 90)
 shape = SubResource("RectangleShape2D_1upr0")
 debug_color = Color(0.85119677, 0.29173112, 0.5947124, 0.41960785)
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=2127276612]
+libraries/ = SubResource("AnimationLibrary_j23h2")
+
+[node name="State Machine" type="Node2D" parent="." unique_id=1316965735 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("1_6ysni")
+starting_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="State Machine" unique_id=2030095139]
+script = ExtResource("8_s1rgi")
+
+[node name="Walk" type="Node2D" parent="State Machine" unique_id=1270019274]
+script = ExtResource("9_j23h2")

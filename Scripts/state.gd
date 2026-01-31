@@ -1,8 +1,11 @@
-extends Node
 class_name State
+extends Node
 
-func enter(): pass
-func exit(): pass
+func enter() -> void: 
+	pass
+
+func exit() -> void: 
+	pass
 
 func process_frame(delta: float) -> State:
 	return null
