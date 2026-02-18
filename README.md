@@ -1,0 +1,1 @@
+Esse projeto se trata de um Videogame 2D, de luta PvP, feito aos moldes de Street Fighter. O serviço foi contratato pelo @84related, banda de rap sitiada em Portugal, para aparecer em clipes como peça artística.
